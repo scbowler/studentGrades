@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Student Grades</title>
+    <link rel="stylesheet" href="Assets/stylesheets/main.css">
+    <script src="Assets/js/main.js"></script>
+</head>
+<body onload="init()">
+    <div class="container">
+        <section id="display-area">
+            <div class="input-lists" id="name-list">Name</div><!--
+            --><div class="input-lists" id="class-list">Class</div><!--
+            --><div class="input-lists" id="grade-list">Grade</div>
+        </section>
+    
+        <section id="input-area">
+            <input type="text" id="name-input" placeholder="Student Name">
+            <input type="text" id="class-input" placeholder="Class">
+            <input type="text" id="grade-input" placeholder="Grade">
+            <button type="button" class="btn" onclick='inputInfo()'>Add To List</button>
+        </section>
+    </div>
+</body>

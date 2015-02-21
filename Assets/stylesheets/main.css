@@ -1,0 +1,63 @@
+.input-lists {
+    display: inline-block;
+    list-style: none;
+    text-transform: capitalize;
+}
+.input-lists div {
+    background-color: #fff;
+}
+
+.input-lists div:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+#name-list, #class-list, #grade-list {
+    display: inline-block;
+    margin: 25px 0;
+    padding: 0;
+}
+
+#name-list div, #class-list div, #grade-list div {
+    height: 22px;
+    padding-top: 8px;
+}
+
+#name-list div, #class-list div {
+    padding-left: 4px;
+}
+
+#name-list {
+    text-align: left;
+    width: 152px;
+}
+
+#class-list {
+    text-align: left;
+    width: 152px;
+}
+
+#grade-list {
+    margin-right: 0;
+    width: 52px;
+}
+
+.container {
+    background-color: #a3d1ff;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 600px;
+    margin: 20px auto;
+}
+
+#grade-input {
+    text-align: center;
+    width: 50px;
+}
+
+.btn {
+    display: block;
+    height: 25px;
+    margin: 10px auto;
+    margin-bottom: 25px;
+    width: 100px;
+}
