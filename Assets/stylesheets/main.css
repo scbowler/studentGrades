@@ -11,13 +11,14 @@
     background-color: #e0e0e0;
 }
 
-#name-list, #class-list, #grade-list {
+#name-list, #class-list, #grade-list, #btn-list {
     display: inline-block;
     margin: 25px 0;
     padding: 0;
 }
 
-#name-list div, #class-list div, #grade-list div {
+#name-list div, #class-list div, #grade-list div, #btn-list div {
+    position: relative;
     height: 22px;
     padding-top: 8px;
 }
@@ -41,6 +42,16 @@
     width: 52px;
 }
 
+#btn-list {
+    width: 90px;
+    padding-bottom: 4px;
+}
+
+.delete {
+    position: relative;
+    bottom: 3px;
+}
+
 .container {
     background-color: #a3d1ff;
     padding-bottom: 25px;
@@ -54,10 +65,45 @@
     width: 50px;
 }
 
-.btn {
+.btn, {
     display: block;
     height: 25px;
     margin: 10px auto;
     margin-bottom: 25px;
     width: 100px;
+}
+
+#average {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#avgText {
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+
+#answer {
+    display: inline-block;
+    text-align: right;
+    background-color: #fff;
+    height: 30px;
+    width: 80px;
+    padding-right: 3px;
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+.high {
+    background-color: #99d6ad !important;
+    font-weight: 800;
+}
+
+.low {
+    background-color: #ffc0c0 !important;
+    font-weight: 800;
 }
