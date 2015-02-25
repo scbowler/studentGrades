@@ -18,9 +18,28 @@ function inputInfo(){
     var inputClass = document.getElementById('class-input');
     var inputGrades =document.getElementById('grade-input');
     
-    name.innerHTML = inputName.value;
-    studentClass.innerHTML = inputClass.value;
-    grades.innerHTML = inputGrades.value;
+    if(validateStringInput(inputName.value)){
+        name.innerHTML = inputName.value;
+    }else{
+        inputName.focus();
+        return;
+    }
+    
+    if(validateStringInput(inputClass.value)){
+        studentClass.innerHTML = inputClass.value;
+    }else{
+        inputClass.focus();
+        return;
+    }
+    
+   
+    if(validateNumberInput(inputGrades.value)){
+        grades.innerHTML = inputGrades.value;
+    }else{
+        inputGrades.value = "";
+        inputGrades.focus();
+        return;
+    }
     btn.innerHTML = "<button class='delete' onclick='deleteEntry(this)'>Delete</button>";
     
     var student = {name: name, class: studentClass, grade: grades, button: btn};
@@ -51,6 +70,7 @@ function calcAvg(){
     var total = 0;
     var highest = [studentArray[0]];
     var lowest = [studentArray[0]];
+    var grade, high, low;
     
     clearTwoClasses('high', 'low');
     
@@ -62,15 +82,19 @@ function calcAvg(){
     for(var i=0; i<arrLength; i++){
         total += parseFloat(studentArray[i].grade.innerHTML);
         
-        if(studentArray[i].grade.innerHTML >= highest[0].grade.innerHTML){
-            if(studentArray[i].grade.innerHTML == highest[0].grade.innerHTML){
+        grade = parseFloat(studentArray[i].grade.innerHTML);
+        high = parseFloat(highest[0].grade.innerHTML);
+        low = parseFloat(lowest[0].grade.innerHTML);
+        
+        if(grade >= high){
+            if(grade == high){
                 highest.push(studentArray[i]);
             }else{
                 highest = [studentArray[i]];
             }
         }
-        if(studentArray[i].grade.innerHTML <= lowest[0].grade.innerHTML){
-            if(studentArray[i].grade.innerHTML == lowest[0].grade.innerHTML){
+        if(grade <= low){
+            if(grade == low){
                 lowest.push(studentArray[i]);
             }else{
                 lowest = [studentArray[i]];
@@ -152,4 +176,24 @@ function highLowHighlight(high, low){
         low[i].grade.classList.add('low');
         low[i].name.classList.add('low');
     }
+}
+
+function validateStringInput(input){
+    if(input == ''){
+        return false;
+    }
+    return true;
+}
+
+function validateNumberInput(input){
+    
+    inputNum = parseFloat(input);
+    
+    if(inputNum >= 0 && inputNum <= 100){
+        return true;
+    }
+    
+    alert("Please enter a number between 0-100 for grades.\nYou entered: " + input);
+    
+    return false;
 }
